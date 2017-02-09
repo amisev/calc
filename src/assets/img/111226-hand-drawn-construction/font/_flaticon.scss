@@ -1,0 +1,179 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 22/06/2016 15:10
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-adjustable-spanner-hand-drawn-construction-tool:before { content: "\f100"; }
+.flaticon-adjustable-spanner-hand-drawn-tool:before { content: "\f101"; }
+.flaticon-alarm-light-hand-drawn-tool:before { content: "\f102"; }
+.flaticon-attention-construction-triangular-hand-drawn-signal:before { content: "\f103"; }
+.flaticon-axe-hand-drawn-tool:before { content: "\f104"; }
+.flaticon-barrier-construction-limit-tool:before { content: "\f105"; }
+.flaticon-barrier-construction-striped-hand-drawn-tool:before { content: "\f106"; }
+.flaticon-barrow-full-of-construction-material-hand-drawn-tool:before { content: "\f107"; }
+.flaticon-blade-hand-drawn-construction-tool:before { content: "\f108"; }
+.flaticon-blueprint-hand-drawn-tool:before { content: "\f109"; }
+.flaticon-building-hand-drawn-tower:before { content: "\f10a"; }
+.flaticon-cap-outline-hand-drawn-construction-tool:before { content: "\f10b"; }
+.flaticon-cement-bag-hand-drawn-construction-material:before { content: "\f10c"; }
+.flaticon-cogwheel-hand-drawn-tool:before { content: "\f10d"; }
+.flaticon-cone-hand-drawn-construction-tool-with-stripes:before { content: "\f10e"; }
+.flaticon-construction-barrier-hand-drawn-tool:before { content: "\f10f"; }
+.flaticon-construction-crane-hand-drawn-tool:before { content: "\f110"; }
+.flaticon-construction-crane-tower-hand-drawn-tool:before { content: "\f111"; }
+.flaticon-construction-hand-drawn-sketch:before { content: "\f112"; }
+.flaticon-construction-image-on-monitor-screen:before { content: "\f113"; }
+.flaticon-construction-materials-transport:before { content: "\f114"; }
+.flaticon-construction-transportation-hand-drawn-machine:before { content: "\f115"; }
+.flaticon-constructor-hand-drawn-worker:before { content: "\f116"; }
+.flaticon-constructor-worker-hand-drawn-person:before { content: "\f117"; }
+.flaticon-crane-hand-drawn-tool:before { content: "\f118"; }
+.flaticon-crane-holding-construction-panel:before { content: "\f119"; }
+.flaticon-crane-lifting-construction-part:before { content: "\f11a"; }
+.flaticon-demolishing-ball:before { content: "\f11b"; }
+.flaticon-double-wrench-hand-drawn-tool:before { content: "\f11c"; }
+.flaticon-down-arrow-traffic-signal-of-triangular-shape:before { content: "\f11d"; }
+.flaticon-drill-construction-hand-drawn-tool:before { content: "\f11e"; }
+.flaticon-drill-hand-drawn-contruction-tool:before { content: "\f11f"; }
+.flaticon-educational-school-hand-drawn-tools:before { content: "\f120"; }
+.flaticon-electical-saw-hand-drawn-machine:before { content: "\f121"; }
+.flaticon-hammer-cylindrical-hand-drawn-construction-tool:before { content: "\f122"; }
+.flaticon-hammer-hand-drawn-construction-tool:before { content: "\f123"; }
+.flaticon-hammer-in-hand:before { content: "\f124"; }
+.flaticon-hand-drawn-construction-tools:before { content: "\f125"; }
+.flaticon-hand-stop-hand-drawn-sign:before { content: "\f126"; }
+.flaticon-house-hand-drawn-building:before { content: "\f127"; }
+.flaticon-house-with-heart-hand-drawn-building:before { content: "\f128"; }
+.flaticon-measuring-tape-hand-drawn-tool:before { content: "\f129"; }
+.flaticon-paint-brush-hand-drawn-tool:before { content: "\f12a"; }
+.flaticon-paint-cube-hand-drawn-tool:before { content: "\f12b"; }
+.flaticon-paint-roller-hand-drawn-tool:before { content: "\f12c"; }
+.flaticon-pencil-and-house-draw:before { content: "\f12d"; }
+.flaticon-pencil-on-paper-sheet:before { content: "\f12e"; }
+.flaticon-pressing-hand-drawn-construction-tool:before { content: "\f12f"; }
+.flaticon-ruler-flexible-hand-drawn-construction-tool:before { content: "\f130"; }
+.flaticon-saw-disc-of-electrical-hand-drawn-tool:before { content: "\f131"; }
+.flaticon-saw-hand-drawn-construction-cutting-tool:before { content: "\f132"; }
+.flaticon-saw-hand-drawn-electrical-cutting-tool:before { content: "\f133"; }
+.flaticon-saw-hand-drawn-tool:before { content: "\f134"; }
+.flaticon-saw-hand-drawn-tool-1:before { content: "\f135"; }
+.flaticon-scissor-hand-drawn-opened-tool:before { content: "\f136"; }
+.flaticon-screw:before { content: "\f137"; }
+.flaticon-screw-hand-drawn-tool:before { content: "\f138"; }
+.flaticon-screwdriver-and-double-wrench-hand-drawn-construction-tools:before { content: "\f139"; }
+.flaticon-screwdriver-hand-drawn-tool:before { content: "\f13a"; }
+.flaticon-shovel-hand-drawn-tool:before { content: "\f13b"; }
+.flaticon-shovel-truck-hand-drawn-transport:before { content: "\f13c"; }
+.flaticon-stop-hand-drawn-signal:before { content: "\f13d"; }
+.flaticon-stop-hand-drawn-signal-rhomb:before { content: "\f13e"; }
+.flaticon-toolbox-hand-drawn-tool:before { content: "\f13f"; }
+.flaticon-triangular-construction-shovel-hand-drawn-tool:before { content: "\f140"; }
+.flaticon-triangular-signal-of-electrical-bolt:before { content: "\f141"; }
+.flaticon-truck-hand-drawn-small-transport:before { content: "\f142"; }
+.flaticon-truck-hand-drawn-transport:before { content: "\f143"; }
+.flaticon-water-tap:before { content: "\f144"; }
+.flaticon-wrench-hand-drawn-double-tool:before { content: "\f145"; }
+    
+    $font-Flaticon-adjustable-spanner-hand-drawn-construction-tool: "\f100";
+    $font-Flaticon-adjustable-spanner-hand-drawn-tool: "\f101";
+    $font-Flaticon-alarm-light-hand-drawn-tool: "\f102";
+    $font-Flaticon-attention-construction-triangular-hand-drawn-signal: "\f103";
+    $font-Flaticon-axe-hand-drawn-tool: "\f104";
+    $font-Flaticon-barrier-construction-limit-tool: "\f105";
+    $font-Flaticon-barrier-construction-striped-hand-drawn-tool: "\f106";
+    $font-Flaticon-barrow-full-of-construction-material-hand-drawn-tool: "\f107";
+    $font-Flaticon-blade-hand-drawn-construction-tool: "\f108";
+    $font-Flaticon-blueprint-hand-drawn-tool: "\f109";
+    $font-Flaticon-building-hand-drawn-tower: "\f10a";
+    $font-Flaticon-cap-outline-hand-drawn-construction-tool: "\f10b";
+    $font-Flaticon-cement-bag-hand-drawn-construction-material: "\f10c";
+    $font-Flaticon-cogwheel-hand-drawn-tool: "\f10d";
+    $font-Flaticon-cone-hand-drawn-construction-tool-with-stripes: "\f10e";
+    $font-Flaticon-construction-barrier-hand-drawn-tool: "\f10f";
+    $font-Flaticon-construction-crane-hand-drawn-tool: "\f110";
+    $font-Flaticon-construction-crane-tower-hand-drawn-tool: "\f111";
+    $font-Flaticon-construction-hand-drawn-sketch: "\f112";
+    $font-Flaticon-construction-image-on-monitor-screen: "\f113";
+    $font-Flaticon-construction-materials-transport: "\f114";
+    $font-Flaticon-construction-transportation-hand-drawn-machine: "\f115";
+    $font-Flaticon-constructor-hand-drawn-worker: "\f116";
+    $font-Flaticon-constructor-worker-hand-drawn-person: "\f117";
+    $font-Flaticon-crane-hand-drawn-tool: "\f118";
+    $font-Flaticon-crane-holding-construction-panel: "\f119";
+    $font-Flaticon-crane-lifting-construction-part: "\f11a";
+    $font-Flaticon-demolishing-ball: "\f11b";
+    $font-Flaticon-double-wrench-hand-drawn-tool: "\f11c";
+    $font-Flaticon-down-arrow-traffic-signal-of-triangular-shape: "\f11d";
+    $font-Flaticon-drill-construction-hand-drawn-tool: "\f11e";
+    $font-Flaticon-drill-hand-drawn-contruction-tool: "\f11f";
+    $font-Flaticon-educational-school-hand-drawn-tools: "\f120";
+    $font-Flaticon-electical-saw-hand-drawn-machine: "\f121";
+    $font-Flaticon-hammer-cylindrical-hand-drawn-construction-tool: "\f122";
+    $font-Flaticon-hammer-hand-drawn-construction-tool: "\f123";
+    $font-Flaticon-hammer-in-hand: "\f124";
+    $font-Flaticon-hand-drawn-construction-tools: "\f125";
+    $font-Flaticon-hand-stop-hand-drawn-sign: "\f126";
+    $font-Flaticon-house-hand-drawn-building: "\f127";
+    $font-Flaticon-house-with-heart-hand-drawn-building: "\f128";
+    $font-Flaticon-measuring-tape-hand-drawn-tool: "\f129";
+    $font-Flaticon-paint-brush-hand-drawn-tool: "\f12a";
+    $font-Flaticon-paint-cube-hand-drawn-tool: "\f12b";
+    $font-Flaticon-paint-roller-hand-drawn-tool: "\f12c";
+    $font-Flaticon-pencil-and-house-draw: "\f12d";
+    $font-Flaticon-pencil-on-paper-sheet: "\f12e";
+    $font-Flaticon-pressing-hand-drawn-construction-tool: "\f12f";
+    $font-Flaticon-ruler-flexible-hand-drawn-construction-tool: "\f130";
+    $font-Flaticon-saw-disc-of-electrical-hand-drawn-tool: "\f131";
+    $font-Flaticon-saw-hand-drawn-construction-cutting-tool: "\f132";
+    $font-Flaticon-saw-hand-drawn-electrical-cutting-tool: "\f133";
+    $font-Flaticon-saw-hand-drawn-tool: "\f134";
+    $font-Flaticon-saw-hand-drawn-tool-1: "\f135";
+    $font-Flaticon-scissor-hand-drawn-opened-tool: "\f136";
+    $font-Flaticon-screw: "\f137";
+    $font-Flaticon-screw-hand-drawn-tool: "\f138";
+    $font-Flaticon-screwdriver-and-double-wrench-hand-drawn-construction-tools: "\f139";
+    $font-Flaticon-screwdriver-hand-drawn-tool: "\f13a";
+    $font-Flaticon-shovel-hand-drawn-tool: "\f13b";
+    $font-Flaticon-shovel-truck-hand-drawn-transport: "\f13c";
+    $font-Flaticon-stop-hand-drawn-signal: "\f13d";
+    $font-Flaticon-stop-hand-drawn-signal-rhomb: "\f13e";
+    $font-Flaticon-toolbox-hand-drawn-tool: "\f13f";
+    $font-Flaticon-triangular-construction-shovel-hand-drawn-tool: "\f140";
+    $font-Flaticon-triangular-signal-of-electrical-bolt: "\f141";
+    $font-Flaticon-truck-hand-drawn-small-transport: "\f142";
+    $font-Flaticon-truck-hand-drawn-transport: "\f143";
+    $font-Flaticon-water-tap: "\f144";
+    $font-Flaticon-wrench-hand-drawn-double-tool: "\f145";
