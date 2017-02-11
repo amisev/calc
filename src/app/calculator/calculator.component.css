@@ -6,3 +6,12 @@
   border-left: 5px solid #a94442; /* red */
 }
 
+.classWithPad { 
+    padding: 0px 5px 0px 0px; 
+} 
+
+.btn-group { 
+    padding: 0px 2px 0px 0px; 
+} 
+
+

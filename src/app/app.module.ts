@@ -8,11 +8,11 @@ import { AgmCoreModule } from "angular2-google-maps/core";
 import { AngularFireModule } from 'angularfire2';
 
 import { CalculatorComponent } from './calculator/calculator.component';
+import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './home/home.component';
 import { RealPropertyComponent } from './real-property/real-property.component';
 
 import { environment } from '../environments/environment';
-import { AboutComponent } from './about/about.component';
-import { HomeComponent } from './home/home.component';
 
 export const firebaseConfig = environment.firebase_;
 

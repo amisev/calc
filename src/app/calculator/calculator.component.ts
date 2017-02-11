@@ -3,8 +3,6 @@ import { FormGroup, FormControl, FormBuilder, Validators, NG_VALUE_ACCESSOR } fr
 import { RealProperty } from '../real-property/real-property.component'
 import { MapsAPILoader } from 'angular2-google-maps/core';
 
-import { AddressService } from '../address.service';
-
 @Component({
   selector: 'app-calculator',
   templateUrl: './calculator.component.html',
@@ -30,8 +28,14 @@ export class CalculatorComponent implements OnInit {
     { value: 5, display: '5'},
   ]
 
-  public clickedButtonValue: number = 1;
+  public bathRoomTypes = [
+    { value: 0, display: 'Совмещ'},
+    { value: 1, display: 'Раздел'}
+  ]
 
+  public clickedPropertyButtonValue: number = 1;
+  public clickedBathRoomButtonValue: number = 1;
+  
   constructor(
     private _fb: FormBuilder,
     private mapsAPILoader: MapsAPILoader,
@@ -44,16 +48,18 @@ export class CalculatorComponent implements OnInit {
       propertyType: [0, <any>Validators.required],
       propertySubType: [0, <any>Validators.required],
       totalSquare: ['', [<any>Validators.required, <any>Validators.pattern('^[0-9]*')]],
-      numberOfRooms: [1, [<any>Validators.required, <any>Validators.pattern('^[0-9]*')]],
-      numberOfBathRooms: [1, <any>Validators.required]
+      numberOfRooms: [1, <any>Validators.required],
+      numberOfBathRooms: [1, <any>Validators.required],
+      ceilingHeight: [2.6, [<any>Validators.required, <any>Validators.pattern('^[0-9]*.?[0-9]*')]],
+      bathRoomType: [0, <any>Validators.required]
     });
 
     this.subscribeToFormChanges();
     // google maps autocomplete
     this.mapsAPILoader.load().then(() => {
       let cityBound_Moscow = new google.maps.LatLngBounds(
-        new google.maps.LatLng(55.960636, 37.221680),
-        new google.maps.LatLng(55.378233, 38.287354)
+        new google.maps.LatLng(55.378233, 37.221680),
+        new google.maps.LatLng(55.960636, 38.287354)
       );
       let autocomplete = new google.maps.places.Autocomplete(
         this.inputElement.nativeElement,
@@ -68,24 +74,26 @@ export class CalculatorComponent implements OnInit {
           //get the place result
           let place: google.maps.places.PlaceResult = autocomplete.getPlace();
           //verify result
-          if (place.geometry === undefined || place.geometry === null) {
+          if (place.geometry === undefined || place.geometry === null || place.address_components['street_number'] === false) {
             return;
           }
-          (<FormControl>this.calculatorForm.controls['address']).setValue(place.name)
+          (<FormControl>this.calculatorForm.controls['address']).setValue(place.formatted_address)
         });
       });
     });
     
   }
 
-  save(model: RealProperty, isValid: boolean){
+  save(model: RealProperty, isValid: boolean) {
     this.submitted = true;
     // check if model is valid
     console.log(model, isValid);
   }
-  propertyTypeBtnClicked(event){
-    let value: number = event.target.value;
-    this.clickedButtonValue = value;
+
+  propertyTypeBtnClicked = (propertyTypeClicked) => {
+    console.log('propertyTypeBtnClicked');
+    let value = propertyTypeClicked.value; 
+    this.clickedPropertyButtonValue = value;
     if (value == 0) {
       // set property sub type to studio, number of rooms to 1
       (<FormControl>this.calculatorForm.controls['propertySubType']).setValue(0);
@@ -95,6 +103,13 @@ export class CalculatorComponent implements OnInit {
       (<FormControl>this.calculatorForm.controls['numberOfRooms']).setValue(<number>value);
     }
   }
+
+  bathRoomTypeBtnClicked = (bathRoomTypeClicked) => {
+    console.log('bathRoomTypeBtnClicked'); 
+    this.clickedBathRoomButtonValue = bathRoomTypeClicked.value;
+    (<FormControl>this.calculatorForm.controls['bathRoomType']).setValue(bathRoomTypeClicked.value);
+  }
+  
   subscribeToFormChanges(){
     const calculatorFormValueChanges$ = this.calculatorForm.valueChanges;
     calculatorFormValueChanges$.subscribe(x=>this.events.push({event: 'Status changed', object: x}));
