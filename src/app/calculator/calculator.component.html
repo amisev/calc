@@ -7,53 +7,113 @@
   <div class="container">
     <div class="row">
       <form class="form" [formGroup]="calculatorForm" novalidate (ngSubmit)="save(calculatorForm.value, calculatorForm.valid)">
+        <div formGroupName="currentStateGroup">
           <div class="col-lg-3 col-md-2 col-sm-1">
           </div>
-          <div class="col-lg-6 col-md-7 col-sm-10 col-xs-12">
-              <div class="form-group">
-                <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
-                  <label for="calculator_address">Адрес</label>
-                  <div class="classWithPad">
-                    <input type="text" autocorrect="off" autocapitalize="off" #inputElement class="form-control" id="calculator_address" formControlName="address" placeholder="Введите адрес дома">
-                  </div>
+          <div class="col-lg-6 col-md-7 col-sm-10 col-xs-12" formGroupName="generalInformationState" *ngIf="calculatorForm.controls.currentState.value == CALCULATOR_FORM_STATE.GENERAL_INFORMATION">
+            <!-- address -->
+            <div class="form-group col-lg-12 col-sm-12 col-md-12 col-xs-12">
+              <label for="calculator_address">Адрес</label>
+              <div class="classWithPad">
+                <input type="text" autocorrect="off" autocapitalize="off" #inputElement class="form-control" id="calculator_address" formControlName="address" placeholder="Введите адрес дома">
+              </div>
+            </div>
+            <!-- number of rooms -->
+            <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <label for="calculator_numberOfRooms">Число комнат</label>
+              <div class="btn-group btn-group-justified center-block classWithPad" id="calculator_numberOfRooms">
+                <div class="btn-group" *ngFor="let propertyType of propertyTypes">
+                  <button  
+                    type="radio" 
+                    class="btn btn-default" 
+                    [class.active]="propertyType.value == this.clickedPropertyButtonValue" 
+                    [value]="propertyType.value" 
+                    (click)="propertyTypeBtnClicked(propertyType)">
+                      <small>{{propertyType.display}}</small>
+                  </button>
                 </div>
               </div>
-              <div class="form-group">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <label for="calculator_numberOfRooms">Число комнат</label>
-                  <div class="btn-group btn-group-justified center-block" id="calculator_numberOfRooms">
-                    <div class="btn-group" *ngFor="let propertyType of propertyTypes">
-                      <button  [class.active]="propertyType.value == this.clickedPropertyButtonValue" type="radio" class="btn btn-default" [value]="propertyType.value" (click)="propertyTypeBtnClicked(propertyType)"><small>{{propertyType.display}}</small></button>
-                    </div>
-                  </div>
+            </div>
+            <!-- total square -->
+            <div class="form-group col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <label for="calculator_square">Общая площадь, м2</label>
+              <div class="classWithPad">
+                <input type="text" class="form-control" id="calculator_square" formControlName="totalSquare">
+              </div>
+            </div>
+            <!-- ceiling height -->
+            <div class="form-group col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <label for="calculator_ceilingHeight">Высота потолков, м</label>
+              <div class="classWithPad">
+                <input type="text" class="form-control" id="calculator_ceilingHeight" formControlName="ceilingHeight">
+              </div>
+            </div>
+            <!-- bath room type -->
+            <div class="form-group col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <label for="calculator_bathRoomType">Санузел</label>
+              <div class="btn-group btn-group-justified center-block" id="calculator_bathRoomType">
+                <div class="btn-group" *ngFor="let bathRoomType of bathRoomTypes">
+                  <button  
+                    type="radio" 
+                    class="btn btn-default" 
+                    [class.active]="bathRoomType.value == this.clickedBathRoomButtonValue" 
+                    [value]="bathRoomType.value" 
+                    (click)="bathRoomTypeBtnClicked(bathRoomType)">
+                      <small>{{bathRoomType.display}}</small>
+                  </button>
                 </div>
               </div>
-              <div class="form-group col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                <label for="calculator_square">Общая площадь, м2</label>
-                <div class="classWithPad">
-                  <input type="text" class="form-control" id="calculator_square" formControlName="totalSquare">
-                </div>
+            </div>
+            <div class="form-group col-lg-6 col-md-7 col-sm-10 col-xs-12">
+              <button type="button" class="btn btn-default" *ngIf="calculatorForm.controls.currentState.value != CALCULATOR_FORM_STATE.GENERAL_INFORMATION" (click)="backwardBtnClicked(calculatorForm.controls.currentState.value)">Вернуться</button>
+              <button type="button" class="btn btn-default" [class.disabled]="!calculatorForm.controls.currentStateGroup.controls.generalInformationState.valid" *ngIf="calculatorForm.controls.currentState.value != CALCULATOR_FORM_STATE.CONTACT_INFORMATION" (click)="forwardBtnClicked(calculatorForm.controls.currentState.value)">Продолжить</button>
+            </div>
+          </div>
+          <!-- generalInformationState -->
+          <div class="col-lg-6 col-md-7 col-sm-10 col-xs-12" formGroupName="additionalOptionsState" *ngIf="calculatorForm.controls.currentState.value == CALCULATOR_FORM_STATE.ADDITIONAL_OPTIONS">
+            <div class="form-group col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <label for="additional_options_design">Дизайн проект</label>
+              <div class="classWithPad">
+                <input type="checkbox" class="checkbox" id="additional_options_design" formControlName="designRequired">
               </div>
-              <div class="form-group col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                <label for="calculator_ceilingHeight">Высота потолков, м</label>
-                <div class="classWithPad">
-                  <input type="text" class="form-control" id="calculator_ceilingHeight" formControlName="ceilingHeight">
-                </div>
+            </div>
+            <div class="form-group col-lg-6 col-md-7 col-sm-10 col-xs-12">
+              <button type="button" class="btn btn-default" *ngIf="calculatorForm.controls.currentState.value != CALCULATOR_FORM_STATE.GENERAL_INFORMATION" (click)="backwardBtnClicked(calculatorForm.controls.currentState.value)">Вернуться</button>
+              <button type="button" class="btn btn-default" [class.disabled]="!calculatorForm.controls.currentStateGroup.controls.generalInformationState.valid" *ngIf="calculatorForm.controls.currentState.value != CALCULATOR_FORM_STATE.CONTACT_INFORMATION" (click)="forwardBtnClicked(calculatorForm.controls.currentState.value)">Продолжить</button>
+            </div>
+          </div>
+          <!-- additionalOptionsState -->
+          <div class="col-lg-6 col-md-7 col-sm-10 col-xs-12" formGroupName="contactInformationState" *ngIf="calculatorForm.controls.currentState.value == CALCULATOR_FORM_STATE.CONTACT_INFORMATION">
+            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <label for="contact_information_email">E-mail</label>
+              <div class="classWithPad">
+                <input type="text" class="form-control" id="contact_information_email" formControlName="email">
               </div>
-              <div class="form-group col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                <label for="calculator_bathRoomType">Санузел</label>
-                <div class="btn-group btn-group-justified center-block" id="calculator_bathRoomType">
-                  <div class="btn-group" *ngFor="let bathRoomType of bathRoomTypes">
-                    <button  [class.active]="bathRoomType.value == this.clickedBathRoomButtonValue" type="radio" class="btn btn-default" [value]="bathRoomType.value" (click)="bathRoomTypeBtnClicked(bathRoomType)"><small>{{bathRoomType.display}}</small></button>
-                  </div>
-                </div>
+            </div>
+            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <label for="contact_information_phone">Телефон</label>
+              <div class="classWithPad">
+                <p-inputMask styleClass="form-control" inputStyleClass="form-control" mask="(999) 999-99-99" id="contact_information_phone" formControlName="phone"></p-inputMask>
               </div>
-              <div class="col-lg-1 col-md-2 col-sm-3 col-xs-4 form-group">
-                <button type="submit" class="btn btn-default" [class.disabled]="!calculatorForm.valid" aria-disabled="!calculatorForm.valid">Продолжить</button>
-              </div>
+            </div>
+            <div class="form-group col-lg-6 col-md-7 col-sm-10 col-xs-12">
+              <button type="button" class="btn btn-default" *ngIf="calculatorForm.controls.currentState.value != CALCULATOR_FORM_STATE.GENERAL_INFORMATION" (click)="backwardBtnClicked(calculatorForm.controls.currentState.value)">Вернуться</button>
+              <button type="button" class="btn btn-default" [class.disabled]="!calculatorForm.controls.currentStateGroup.controls.contactInformationState.valid" *ngIf="calculatorForm.controls.currentState != CALCULATOR_FORM_STATE.CONTACT_INFORMATION" (click)="forwardBtnClicked(calculatorForm.controls.currentState.value)">Продолжить</button>
+            </div>
+          </div>
+          <!-- contactInformationState -->
+          <div class="col-lg-6 col-md-7 col-sm-10 col-xs-12" formGroupName="additionalOptionsState" *ngIf="calculatorForm.controls.currentState.value == CALCULATOR_FORM_STATE.FINAL_STATE">
+            <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              Информация успешно направлена на ваш электронный адрес. Мы свяжемся с вами в ближайшее время.
+            </div>
+          </div>
+          <!-- final -->
+          <div class="col-lg-1 col-md-2 col-sm-3 col-xs-4 form-group" *ngIf="calculatorForm.controls.currentState == CALCULATOR_FORM_STATE.CONTACT_INFORMATION">
+            <button type="submit" class="btn btn-default" [class.disabled]="!calculatorForm.controls.currentStateGroup.controls.generalInformationState.valid" aria-disabled="!calculatorForm.valid" >Продолжить</button>
           </div>
           <div class="col-lg-3 col-md-2 col-sm-1">
           </div>
+        </div>
       </form>
     </div>
   </div>

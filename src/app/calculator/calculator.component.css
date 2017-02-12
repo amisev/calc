@@ -1,8 +1,7 @@
-.ng-valid:not(form), .ng-valid.required  {
+#contact_information_email.ng-valid, #calculator_address.ng-valid, #calculator_square.ng-valid, #calculator_ceilingHeight.ng-valid {
   border-left: 5px solid #42A948; /* green */
 }
-
-.ng-invalid:not(form)  {
+#contact_information_email.ng-invalid, #calculator_address.ng-invalid, #calculator_square.ng-invalid, #calculator_ceilingHeight.ng-invalid {
   border-left: 5px solid #a94442; /* red */
 }
 

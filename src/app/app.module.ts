@@ -6,6 +6,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { AppRoutingModule, routedComponents } from './app-routing.module';
 import { AgmCoreModule } from "angular2-google-maps/core";
 import { AngularFireModule } from 'angularfire2';
+import { InputMaskModule } from 'primeng/primeng';
 
 import { CalculatorComponent } from './calculator/calculator.component';
 import { AboutComponent } from './about/about.component';
@@ -26,7 +27,8 @@ export const firebaseConfig = environment.firebase_;
     }),
     HttpModule,
     JsonpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    InputMaskModule
   ],
   declarations: [AppComponent, CalculatorComponent, RealPropertyComponent, routedComponents, AboutComponent, HomeComponent],
   bootstrap: [AppComponent]
