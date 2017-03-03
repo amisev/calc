@@ -4,12 +4,16 @@ const enum PropertyType {domestic, commercial};
 const enum PropertySubType {studio, flat, house, office};
 
 export interface RealProperty {
-  sAddress?: string;
-  ePropertyType?: PropertyType;
-  ePropertySubType: PropertySubType;
-  nTotalSquare: number;
-  nNumberOfRooms: number;
-  nNumberOfBathRooms: number;
+  gma_place_id?: string;
+  address_line_1?: string;
+  address_line_2?: string;
+  propertyType?: PropertyType;
+  propertySubType: PropertySubType;
+  totalSquare: number;
+  ceilingHeight: number;
+  numberOfRooms: number;
+  numberOfBathRooms: number;
+  bathRoomType: number;
 }
 
 @Component({
